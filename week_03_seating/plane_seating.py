@@ -134,38 +134,6 @@ def purchase_economy_plus(plane,economy_sold,name):
     return plane
 
 
-# THIS WILL BE LEFT EMPTY FOR THE FIRST STAGE OF THE PROJECT
-def seat_economy(plane,economy_sold,name):
-    """
-    This is mostly the same as the purchase_economy_plus routine but
-    just does the random assignment.
-
-    We use this when we're ready to assign the economy seats after most
-    of the economy plus seats are sold
-
-
-    """
-    rows = len(plane)
-    cols = len(plane[0])
-
-    # total unassigned seats
-    # seats = get_avail_seats(plane,economy_sold)
-    # print("Seats available for economy is " + str(seats))
-    # exit if we have no more seats
-
-    # add code to seat all the economy_sold people
-
-    found_seat = False
-    # couldn't find window seat or didnt specifically want a window seat
-    # while not(found_seat):
-    while not(found_seat):
-        r_row = random.randrange(0,rows)
-        r_col = random.randrange(0,cols)
-        if plane[r_row][r_col] == "win" or plane[r_row][r_col] == "avail":
-            plane[r_row][r_col] = name
-            found_seat = True
-    return plane
-
 # finds number of empty seats in plane
 # used in assign_rows function
 def find_empty_seats(plane):
